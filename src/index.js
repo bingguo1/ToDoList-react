@@ -211,7 +211,7 @@ class App extends React.Component {
                 <div className="col px-1 m-1 d-flex align-items-center">
                   {this.state.editingItemIndex !== todoitem.index ?
                     <input type="text" className={ todoitem.completed? todoItemContentStyle+' strike-through-text': todoItemContentStyle} readOnly
-                      value={todoitem.content} title="Buy groceries for next week" /> :
+                      value={todoitem.content} /> :
                     <input id="editingInputBox" type="text" onChange={evt => this.setState({ contentInEditing: evt.target.value })}
                       className="form-control form-control-lg border-0 edit-todo-input rounded px-3"
                       value={this.state.contentInEditing} />
@@ -224,14 +224,12 @@ class App extends React.Component {
                       <FontAwesomeIcon icon="pencil-alt" className="text-info btn m-0 p-0" data-tip="Edit todo"/>
                     </h5>
                     <h5 className="m-0 p-0 px-2" onClick={() => this.removeThisToDoItem(todoitem.index)}>
-                      <FontAwesomeIcon icon="trash-alt" className="text-danger btn m-0 p-0" data-tip="Delete todo"/>
-                      
-                      {/* <i className="fa fa-trash-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i> */}
+                      <FontAwesomeIcon icon="trash-alt" className="text-danger btn m-0 p-0" data-tip="Delete todo"/>                      
                     </h5>
                   </div>
                   <div className="row todo-created-info">
                     <div className="col-auto d-flex align-items-center pr-2">
-                      <FontAwesomeIcon icon="info-circle" data-tip="Created datetime"/>
+                      <FontAwesomeIcon icon="info-circle" data-tip="Created datetime" className="text-secondary mx-1"/>
                       {/* <i className="fa fa-info-circle my-2 px-2 text-black-50 btn" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i> */}
                       <label className="date-label my-2 text-black-50">{this.displayAddTime(todoitem.addTime)}</label>
                     </div>
