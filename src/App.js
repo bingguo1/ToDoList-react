@@ -96,7 +96,6 @@ class App extends React.Component {
         filterType: "all",
       },
     };
-    window.localStorage.setItem("construc","inital from app");
     if(window.localStorage.getItem("ToDoList_storage")){
         this.state.todolist=JSON.parse(window.localStorage.getItem("ToDoList_storage"));
         this.state.todolist.forEach( todo=>{
